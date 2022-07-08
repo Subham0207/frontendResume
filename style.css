@@ -1,0 +1,100 @@
+body{
+    margin:0;
+    height: 100vh;
+    font-size:16px;
+    font-family: 'Times New Roman', Times, serif;
+    /* color:white !important */
+}
+
+
+img{
+    border:2px solid white;
+    padding:.5rem;
+    /* filter: grayscale(1); */
+}
+
+#myResume{
+    font-variant: small-caps;
+    font-size: 4rem;
+    padding:0;
+    margin:0;
+    font-weight: bolder;
+}
+
+header{
+    background-color: black;
+    color:white;
+    display: flex;justify-content:space-between;align-items: center;
+    padding:1rem;
+    font-size: 1.3rem;
+}
+
+.resume-details{
+    margin:1rem;
+    padding:1rem;
+    background-color:grey;
+    display: flex;flex-direction: column;
+    justify-content: center; align-items: center;
+}
+
+.heading{
+    border:2px solid black;
+    padding:1rem 0rem;
+    width: 100%;
+    font-variant: small-caps;
+    font-size:2rem;
+    font-weight: bold;
+    text-align: center;
+    margin:2rem;
+}
+.column-head{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(4,1fr);
+    text-align: center;
+}
+
+.cert-table{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(6,1fr);
+    text-align:left;
+}
+.cert-table > *{
+    padding:1rem;
+}
+
+.personal-details{
+    width:70%;
+    display: flex;
+    justify-content: center;
+}
+.personal-details>div>*{
+    padding:1rem
+}
+
+.internship-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-item{
+    margin:2rem 0rem;
+}
+
+.project-head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resume-details:nth-child(even){
+    background-color: rgb(172, 172, 172);
+}
