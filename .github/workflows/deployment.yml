@@ -23,7 +23,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_TOKEN }}
         aws-region: us-east-1
     - name: upload the files to s3
       run: aws s3 cp . s3://${{ secrets.BUCKET_NAME }}/ --recursive  --exclude ".git/*" --exclude ".gitignore"
