@@ -19,7 +19,20 @@ img{
     padding:0;
     margin:0;
     font-weight: bolder;
+    position: relative;
 }
+
+
+.viewerCount{
+    position: absolute;
+    top:100%;left:50%;
+    font-size: 2rem;
+    background-color:deeppink;
+    padding:.3rem .8rem;
+    border-radius: 1rem;
+    min-width:fit-content;
+}
+
 
 header{
     background-color: black;
@@ -36,6 +49,8 @@ header{
     display: flex;flex-direction: column;
     justify-content: center; align-items: center;
 }
+
+
 
 .heading{
     border:2px solid black;
@@ -98,3 +113,4 @@ header{
 .resume-details:nth-child(even){
     background-color: rgb(172, 172, 172);
 }
+
