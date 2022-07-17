@@ -8,9 +8,10 @@ body{
 
 
 img{
-    border:2px solid white;
-    padding:.5rem;
     /* filter: grayscale(1); */
+    width: 150px;
+    clip-path: inset(5%);
+    filter: contrast(1.4);
 }
 
 #myResume{
@@ -95,9 +96,10 @@ header{
 }
 
 .internship-details{
-    width: 100%;
+    width: 60%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .project-item{
@@ -114,3 +116,93 @@ header{
     background-color: rgb(172, 172, 172);
 }
 
+
+
+@media (max-width: 1124px) { 
+    
+    img{
+        border:2px solid white;
+        padding:.5rem;
+        /* filter: grayscale(1); */
+    }
+    
+    #myResume{
+        font-size: 3rem;
+    }
+       
+    .viewerCount{
+        font-size: 1.5rem;
+    }
+    
+    header{
+        font-size: 1.2rem;
+    }
+    
+    .heading{
+        font-size:2rem;
+     }
+    .column-head{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:980px) {
+header{
+    display: flex;flex-direction:column;
+    justify-content:space-evenly; 
+}
+#myResume{
+    margin:5rem 0;
+    font-size:4rem;
+}
+.project-head{
+    width: 100%;
+    display: flex;flex-direction: column;
+    justify-content: space-between;
+}
+img{
+    /* filter: grayscale(1); */
+    width: 150px;
+    clip-path: inset(7%);
+    filter: contrast(1.4);
+}
+}
+
+
+@media (max-width:706px){
+.column-head{
+    background-color: black;
+    color:white;
+    font-size: 1rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:1rem;
+}
+/* .content{
+    border:1px solid black;
+} */
+.content > *:not(.column-head){
+    border:1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.personal-details{
+    flex-direction: column;
+}
+.internship-details{
+    flex-direction: column;
+}
+.cert-table > *{
+    padding:.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border : 1px solid black;
+}
+img{
+    margin-bottom:4rem;
+    clip-path: circle(40% at 50% 50%);
+}
+}
