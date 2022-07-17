@@ -6,9 +6,10 @@ var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 let count;
 const updateViews = async () => {
   const res = await fetch(
-    "https://q2e4zs9v0c.execute-api.us-east-1.amazonaws.com/prod/count",
+    "https://bil80p0l9c.execute-api.us-east-1.amazonaws.com/prod/count",
     {
       method: "GET",
+      credentials: "include",
     }
   );
 
