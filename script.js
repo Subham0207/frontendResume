@@ -15,8 +15,10 @@ const updateViews = async () => {
   const result = await res.json();
   count = result.Attributes.views;
 };
-// updateViews();
-counter.innerHTML = `viewers : ${count || 0}`;
+(async () => {
+  await updateViews();
+  counter.innerHTML = `viewers : ${count || 0}`;
+})();
 
 //changing the title when media query max width in 700px
 const boardEL = document.querySelector(".board");
