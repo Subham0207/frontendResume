@@ -25,5 +25,16 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_TOKEN }}
         aws-region: us-east-1
+    - name: construct URL for our APIgateway
+      run : TEMP_URL=`aws apigateway get-rest-apis | python3 -c "import json,sys;
+            items=json.load(sys.stdin)['items'];app=next((item for item in items if item['name'] == 'sam-app'), None);id=app['id'];
+            url=f'https://{id}.execute-api.us-east-1.amazonaws.com/prod/count';
+            print(url);"`
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v2
+      with:
+        find: '(fetch\(")(.*)(",)'
+        replace: $TEMP_URL
+        include: "script.js" 
     - name: upload the files to s3
       run: aws s3 cp . s3://${{ secrets.BUCKET_NAME }}/ --recursive  --exclude ".git/*" --exclude ".gitignore"
