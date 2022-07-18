@@ -38,3 +38,5 @@ jobs:
         include: "script.js" 
     - name: upload the files to s3
       run: aws s3 cp . s3://${{ secrets.BUCKET_NAME }}/ --recursive  --exclude ".git/*" --exclude ".gitignore"
+    - name: Invalidate cloudfront cache
+      run: aws cloudfront create-invalidation --distribution-id E1YMUGCIDETE8R --paths "/script.js" "/index.html" "/style.css"
